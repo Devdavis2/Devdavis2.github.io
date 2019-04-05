@@ -1,3 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Marck+Script');
+
 body {
-    background: gray
+    background: whitesmoke
 }
+
+#map {
+    height: 100%;
+    width: 35%;
+    display: flex;
+    align-content: center;
+}
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+h1 {
+    font-family: 'Marck Script', cursive;
+    font-size: 60px;
+    }

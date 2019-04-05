@@ -1,24 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Stamford Eats</title>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" charset="utf-8"></script>
-        
-    
-    <script src="app.js"></script>
 
-   <link rel="stylesheet" href="style.css">
-        
+    <script src="./js/app.js"></script>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+
+
 </head>
 
 </head>
+
 <body>
-    
+
+    <div class="container">
+        <H1>Stamford Eats</H1>
+        <nav>
+            <ul>
+    <li><link rel="stylesheet" href="#">home</li>
+    <li><link rel="stylesheet" href="#">about</li>
+    <li><link rel="stylesheet" href="#">neighborhoods</li>
+    <li><link rel="stylesheet" href="#">maps</li>
+            </ul>
+        </nav>
+        <div id="section1">
+            <article>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum, exercitationem corrupti corporis
+                    nihil id earum itaque, molestias distinctio rem dignissimos totam cupiditate debitis! Illo officiis,
+                    provident obcaecati animi nisi consequuntur.</p>
+            </article>
+        </div>
+
+        <div id="section2">
+            <article>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum, exercitationem corrupti corporis
+                    nihil id earum itaque, molestias distinctio rem dignissimos totam cupiditate debitis! Illo officiis,
+                    provident obcaecati animi nisi consequuntur.</p>
+            </article>
+        </div>
+    </div>
+    <div id="map"></div>
+
+    <!-- START OF GOOGLE MAPS SCRIPT -->
+
+    <script>
+
+
+        // initMAP() function
+
+        function initMap() {
+
+            const options = {
+                zoom: 8,
+                center: { lat: 41.079857, lng: -73.546028 },
+            }
+
+            const map = new
+                google.maps.Map
+                (document.getElementById('map'), options);
+
+            // Marker
+            // const marker = new google.maps.Marker({
+            // position: {lat: 41.0579, lng: -73.5388},
+            // map:map
+            // // icon: create a custom marker of food or food.
+            // });
+        }
+
+        addMarker({ 
+        coords: {lat: 41.0579, lng: -73.5388}
+        // iconImage: 
+        }); 
+        addMarker({lat: 41.0579, lng: -73.5388});
+
+        function addMarker(coords) {
+         Marker
+            const marker = new google.maps.Marker({
+            position: coords,
+            map:map
+            // icon: create a custom marker of food or food.
+            });
+        } 
+
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzkcvrMOgJOpe8uo3XelGFbcJV79cngtI&callback=initMap"
+        async defer></script>
+
+
+
 </body>
+
 </html>
