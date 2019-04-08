@@ -16,25 +16,37 @@
     <link rel="stylesheet" href="./css/style.css">
 
 
+    <H1>Stamford Eats</H1>
 
-</head>
+    <nav>
+            <ul>
+                <li>
+                    <link rel="stylesheet" href="#">home</li>
+                <li>
+                    <link rel="stylesheet" href="#">about</li>
+                <li>
+                    <link rel="stylesheet" href="#">neighborhoods</li>
+                <li>
+                    <link rel="stylesheet" href="#">maps</li>
+            </ul>
+        </nav>
 
+<img src="/Users/DLC/dev-port/sei/project1/images/Stamford_Eats.jpg" alt="Stamford Eats">
 </head>
 
 <body>
 
     <div class="container">
-        <H1>Stamford Eats</H1>
-        <nav>
-            <ul>
-    <li><link rel="stylesheet" href="#">home</li>
-    <li><link rel="stylesheet" href="#">about</li>
-    <li><link rel="stylesheet" href="#">neighborhoods</li>
-    <li><link rel="stylesheet" href="#">maps</li>
-            </ul>
-        </nav>
+        
+        <!-- Nav menu Section -->
+
+
+
+
+         <!-- End of Nav menu Section -->
         <div id="section1">
             <article>
+                <h2>Downtown Stamford</h2>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum, exercitationem corrupti corporis
                     nihil id earum itaque, molestias distinctio rem dignissimos totam cupiditate debitis! Illo officiis,
                     provident obcaecati animi nisi consequuntur.</p>
@@ -43,61 +55,87 @@
 
         <div id="section2">
             <article>
+                <h2>Harbor Point</h2>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum, exercitationem corrupti corporis
                     nihil id earum itaque, molestias distinctio rem dignissimos totam cupiditate debitis! Illo officiis,
                     provident obcaecati animi nisi consequuntur.</p>
             </article>
         </div>
-    </div>
-    <div id="map"></div>
 
-    <!-- START OF GOOGLE MAPS SCRIPT -->
+        <!-- <div id="inputBox"><input id="searchTextField" type="text" size="35%" placeholder="Search Resteruant Here!"></div>
+
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzkcvrMOgJOpe8uo3XelGFbcJV79cngtI&libraries=places"></script> -->
+
+    </div>
+
+    <!-- START OF GOOGLE MAPS SCRIPT --> 
+    <div id="input"><input id="searchTextField" type="text" size="70%" placeholder="Find places to eat!"></div>
+    
+    <div id="map"></div>
+ 
 
     <script>
-
 
         // initMAP() function
 
         function initMap() {
 
-            const options = {
-                zoom: 8,
-                center: { lat: 41.079857, lng: -73.546028 },
+            
+
+        const options = {
+            zoom: 8,
+            center: { lat: 41.079857, lng: -73.546028 },
             }
 
-            const map = new
-                google.maps.Map
-                (document.getElementById('map'), options);
+        const map = new
+            google.maps.Map
+            (document.getElementById('map'), options);
+
+
+            // New Marker
 
             // Marker
-            // const marker = new google.maps.Marker({
-            // position: {lat: 41.0579, lng: -73.5388},
-            // map:map
-            // // icon: create a custom marker of food or food.
-            // });
-        }
-
-        addMarker({ 
-        coords: {lat: 41.0579, lng: -73.5388}
-        // iconImage: 
-        }); 
-        addMarker({lat: 41.0579, lng: -73.5388});
-
-        function addMarker(coords) {
-         Marker
             const marker = new google.maps.Marker({
-            position: coords,
-            map:map
-            // icon: create a custom marker of food or food.
+            position: {lat: 41.0579, lng: -73.5388},
+            map: map, 
             });
-        } 
+         
+            // I am having trouble with the info window function. Infowindo is defined but not opening on click.
+
+            const infoWindow = new google.maps.InfoWindow({
+            content: 'Downtown Stamford'  
+            }); 
+            // receiving a type error on click.
+            marker.addListener('click', function() {
+                InfoWindow.open(map, marker);
+            });
+
+            // add marker function
+            const addMarker = (props) => {
+                const marker = new google.maps.Marker({
+            position: props.coords,
+            map: map, 
+            });  
+            }
+
+            const markers = [{coords: {lat: 41.0562, lng: -73.5387}}, {coords: {lat: 41.0411, lng: -73.5426}}, {coords: {lat: 41.0534, lng: -73.5410}}]; 
+
+            // addMarker({coords: {lat: 41.0562, lng: -73.5387}});
+            // addMarker({coords: {lat: 41.0411, lng: -73.5426}});
+            // addMarker({coords: {lat: 41.0534, lng: -73.5410}});
+
+            for (let i =0; i < markers.length; i++){
+                addMarker(markers[i])
+            }
+
+        }
 
     </script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzkcvrMOgJOpe8uo3XelGFbcJV79cngtI&callback=initMap"
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzkcvrMOgJOpe8uo3XelGFbcJV79cngtI&libraries=places"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzkcvrMOgJOpe8uo3XelGFbcJV79cngtI&callback=initMap"
         async defer></script>
-
-
 
 </body>
 

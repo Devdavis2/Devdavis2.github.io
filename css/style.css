@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Marck+Script');
 
+
 body {
     background: whitesmoke
+}
+
+img {
+    width: 50%
 }
 
 #map {
@@ -19,5 +24,6 @@ body {
   
 h1 {
     font-family: 'Marck Script', cursive;
-    font-size: 60px;
+    font-size: 80px;
+    padding: -5px;
     }
