@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Marck+Script');
 
+/* header {
+    background: url(/Users/DLC/dev-port/sei/project1/images/Stamford_Eats.jpg)
+    no-repeat;
+    margin: 0 auto; 
+}*/
 
 body {
     background: whitesmoke
@@ -26,4 +31,8 @@ h1 {
     font-family: 'Marck Script', cursive;
     font-size: 80px;
     padding: -5px;
+    }
+
+    li {
+        list-style-type: none;
     }
