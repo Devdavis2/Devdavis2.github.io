@@ -1,16 +1,14 @@
-
-
-
-@import url('https://fonts.googleapis.com/css?family=Marck+Script'); */
+@import url('https://fonts.googleapis.com/css?family=Marck+Script|Open+Sans'); */
 
 header {
-   background: url(/Users/DLC/dev-port/sei/project1/images/Stamford_Eats.jpg)
-   no-repeat;
+   background: url(https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjVsZO1n8bhAhWQmOAKHcThBnEQjRx6BAgBEAU&url=http%3A%2F%2Fwww.digitalsujay.com%2Fchoice-of-consumer-electronic-products%2F&psig=AOvVaw2mSyblV4kxGEP21jDTd4TC&ust=1555008957955768)
+   repeat;
    margin: 0 auto;
 }
 
 body {
-   background: whitesmoke
+   background: whitesmoke;
+   font-family: 'Open Sans', sans-serif;
 }
 
 img {
@@ -29,16 +27,13 @@ img {
    margin: 0;
    padding: 0;
  }
+
  h1 {
    font-family: 'Marck Script', cursive;
    font-size: 80px;
-   padding: -5px;
+   padding: -1px auto;
    }
 
    li {
        list-style-type: none;
    }
-
-#input {
-   align-content: center;
-}

@@ -1,21 +1,77 @@
 
 console.log('hello');
 
-const ts = 1
-const privateKey = 'a0cda04987b968ca37b0519019645ae8'
-const publicKey = 'Bbbe3b3e008ddc8eda8950c6c41881ebb6994544'
-const hash = '1505641d8bf74e3e24ea808cf0152de9'
+// const queryType = `t=`
+// let titleQuery = 'Cashierless Amazon Go stores are planning to accept cash'
 
-const charactersURL = `https://gateway.marvel.com:443/v1/public/characters?limit=20&apikey=a0cda04987b968ca37b0519019645ae8`
+const newsURL = 'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=5909123013824ac0b06a5ce48c3afe05'
 
-fetch(charactersURL)
-.then(response => response.json())
-.then(data => {
+// fetch(newsURL)
+// .then(response => response.json())
+// .then(data => {
 
-console.log(hash); 
-});
+// console.log(data); 
+// });
 
 
+// // Fridays lesson
+// const newsData = $.ajax({
+//   url: newsURL
+// })
+// console.log(newsData.responseJSON);
+
+// const getNews = () => {
+//   $.ajax({
+//     url: newsURL
+//   }).then((newsData) => {
+//     // $('.container').html(`
+//     //     <h2> ${newsData.Name} </h2>
+//     //     <h3> ${newsData.Title} </h3>
+//     //     <h4> ${newsData.Author} <h4>
+//     //     <p> ${newsData.Description} </p>
+//     //     `)
+//     console.log('news' + newsData);
+    
+//   }, (error) => {
+//     console.error(error)
+//   })
+  
+// }
+
+ 
+
+const getNews = () => {
+  $.ajax({
+    url: newsURL
+  }).then((newsData) => {
+
+    const i = getNews;
+    for (let i=0; i<=8; i++) {
+
+        const $h2 = $('<h2>').attr('class','title')
+        .text(newsData.articles[i].title)
+        $('.container').append($h2);
+
+        const $p = $('<p>').attr('class','description')
+        .text(newsData.articles[i].description)
+        $('.container').append($p);
+
+        const $h5 = $('<h5>').attr('class','author')
+        .text(newsData.articles[i].author)
+        $('.container').append($h5);
+
+        const $img = $('<img>').attr('class','img')
+        $img.attr('src', newsData.articles[i].urlToImage)
+        $('.container').append($img)
+    
+
+      }
+ 
+  }, (error) => {
+    console.error(error)
+  })
+}
+getNews()
 
 
 
