@@ -1,65 +1,19 @@
+
 console.log('hello');
 
- class ZOMATO {
-constructor(){
-this.api = "8aa173d3965ae6492837235b004a88af"
-this.header = {
-  method: 'GET',
-  headers: {
-    'user-key': this.api,
-    'content-type': 'application/json'
-  },
-  credentials: 'same-origin'
-};
-  }
-  async searchAPI(){
-    // categoru url
-    const categoryURL = `https://developers.zomato.com/api/v2.1/categories`;  
-  
-    // category data
-  const categoryInfo = await fetch(categoryURL, this.header);
-  const categoryJSON = await categoryInfo.json();
-  const categories = await categoryJSON.categories;
+const ts = 1
+const privateKey = 'a0cda04987b968ca37b0519019645ae8'
+const publicKey = 'Bbbe3b3e008ddc8eda8950c6c41881ebb6994544'
+const hash = '1505641d8bf74e3e24ea808cf0152de9'
 
-return{
-  categories 
-}
-  
-  }
- }
+const charactersURL = `https://gateway.marvel.com:443/v1/public/characters?limit=20&apikey=a0cda04987b968ca37b0519019645ae8`
 
- class UI {
- constructor(){
-   this.loader = document.querySelector('.loader');
-   this.restaurantList = document.getElementById('restaurant-list')
- }
- addSelectOptions(categories){
-  const search = document.getElementById('searchForm');  
-  let output = `<option value='0' selected> select category</option>`;
-  categories.forEach(category => {
-    output <= `<option value ="${category.categories.id}">${category.categories.name}</option>`
-  });
-  search.innerHTML = output;
- }
- }
+fetch(charactersURL)
+.then(response => response.json())
+.then(data => {
 
- (function(){
-const searchForm = document.getElementById('searchForm'); 
-const searchCity = document.getElementById('searchForm'); 
-const searchCategory = document.getElementById('searchForm'); 
-
-
-const zomato = new ZOMATO();
-
-const ui = new UI();
-// Add select options
-document.addEventListener('DOMConentLoaded',()=>{ })
-// Logic starts here
-zomato.searchAPI().then(data => console.log(data));
-  // ui.addSelectOption(data.categories)); 
-  
-  // console.log(data));
- })();
+console.log(hash); 
+});
 
 
 
@@ -68,44 +22,67 @@ zomato.searchAPI().then(data => console.log(data));
 
 
 
-// const zomato = ('zomato');
-// key = '<8aa173d3965ae6492837235b004a88af>'
 
 
-//   const baseURL = 'https://developers.zomato.com/api/v2.1/categories'
-//   const apiKey = '8aa173d3965ae6492837235b004a88af'
-//   const queryType = 't='
-//   let titleQuery = 'restaurants'
-//   const queryURL = baseURL + apiKey + '&' + queryType
-//   const foodData = $.ajax({
-//       url: queryURL + titleQuery
-      
-//   });
-//   console.log(queryURL + titleQuery)
 
-//   $(() => {
 
-//   const getFood = () => {
-//       $.ajax({
-//           url: queryURL + titleQuery
-//       }).then((yelpData) => {
-//           // console.log(yelpData)
-//           $('.container').html(`
-//       <h2>${yelpData.Term}<h2>
-//       <h3>${yelpData.Location}</h3>
-//       <h4>${yelpData.categories}</h4>
-//       <h5>${yelpData.Price}</h5>
-//       <p>${yelpData.Attributes}</p>
-//       `)
-//           $('<img>')
-//           .attr('src', yelpData.Image)
-//           .attr('alt', yelpData.Title)
-//           .appendTo($('.container'))
-//   }, (error) => {
-//       console.error(error)
-//   }) 
-//   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const getMovie = () => {
+//     $.ajax({
+//         url: queryURL + titleQuery
+//     }).then((movieData) => {
+//         // console.log(movieData)
+//         $('.container').html(`
+//     <h2>${movieData.Title}<h2>
+//     <h3>${movieData.Year}</h3>
+//     <h4>${movieData.Rated}</h4>
+//     <h5>${movieData.Genre}</h5>
+//     <p>${movieData.Plot}</p>
+//     `)
+//         $('<img>')
+//         .attr('src', movieData.Poster)
+//         .attr('alt', movieData.Title)
+//         .appendTo($('.container'))
+// }, (error) => {
+//     console.error(error)
+// }) 
+// }
+// // console.log(movieData.responseJSON);
+// $(() => { // document on reay
+
+//         // input value search for movies. 
+//     $('form').on('submit', (event) =>{
+//         event.preventDefault()
+//         titleQuery = $('input[type="text"]').val()
+//         getFood()
+//     })
+// });
 
 
 

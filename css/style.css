@@ -1,38 +1,44 @@
-@import url('https://fonts.googleapis.com/css?family=Marck+Script');
 
-/* header {
-    background: url(/Users/DLC/dev-port/sei/project1/images/Stamford_Eats.jpg)
-    no-repeat;
-    margin: 0 auto; 
-}*/
+
+
+@import url('https://fonts.googleapis.com/css?family=Marck+Script'); */
+
+header {
+   background: url(/Users/DLC/dev-port/sei/project1/images/Stamford_Eats.jpg)
+   no-repeat;
+   margin: 0 auto;
+}
 
 body {
-    background: whitesmoke
+   background: whitesmoke
 }
 
 img {
-    width: 50%
+   width: 50%
 }
 
 #map {
-    height: 100%;
-    width: 35%;
-    display: flex;
-    align-content: center;
+   height: 100%;
+   width: 35%;
+   display: flex;
+   align-content: center;
 }
 
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  
-h1 {
-    font-family: 'Marck Script', cursive;
-    font-size: 80px;
-    padding: -5px;
-    }
+ html, body {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+ }
+ h1 {
+   font-family: 'Marck Script', cursive;
+   font-size: 80px;
+   padding: -5px;
+   }
 
-    li {
-        list-style-type: none;
-    }
+   li {
+       list-style-type: none;
+   }
+
+#input {
+   align-content: center;
+}
