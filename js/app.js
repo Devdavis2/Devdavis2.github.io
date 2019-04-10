@@ -38,7 +38,7 @@ const newsURL = 'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=
   
 // }
 
- 
+
 
 const getNews = () => {
   $.ajax({
@@ -47,24 +47,49 @@ const getNews = () => {
 
     const i = getNews;
     for (let i=0; i<=8; i++) {
+      const $blurb = $('<div>')
 
+      if (i>=0 && i<=2){
         const $h2 = $('<h2>').attr('class','title')
         .text(newsData.articles[i].title)
-        $('.container').append($h2);
+        $($blurb).append($h2);
 
         const $p = $('<p>').attr('class','description')
         .text(newsData.articles[i].description)
-        $('.container').append($p);
+        $($blurb).append($p);
 
         const $h5 = $('<h5>').attr('class','author')
         .text(newsData.articles[i].author)
-        $('.container').append($h5);
+        $($blurb).append($h5);
 
         const $img = $('<img>').attr('class','img')
         $img.attr('src', newsData.articles[i].urlToImage)
-        $('.container').append($img)
-    
+        $($blurb).append($img)
+        $('.row_1').append($blurb)
+      }
+      if (i>=3 && i<=5){
 
+      }
+      if (i>=6 && i<=8){
+        
+      }
+
+        // const $h2 = $('<h2>').attr('class','title')
+        // .text(newsData.articles[i].title)
+        // $('blurb').append($h2);
+
+        // const $p = $('<p>').attr('class','description')
+        // .text(newsData.articles[i].description)
+        // $('blurb').append($p);
+
+        // const $h5 = $('<h5>').attr('class','author')
+        // .text(newsData.articles[i].author)
+        // $('blurb').append($h5);
+
+        // const $img = $('<img>').attr('class','img')
+        // $img.attr('src', newsData.articles[i].urlToImage)
+        // $('blurb').append($img)
+  
       }
  
   }, (error) => {
@@ -75,9 +100,12 @@ getNews()
 
 
 
-
-
-
+// if (i>=0 && i<=2){
+// }
+// if (i>=3 && i<=5){
+// }
+// if (i>=6 && i<=8){
+// }
 
 
 
