@@ -7,10 +7,7 @@ body {
    font-family: 'Open Sans', sans-serif;
 }
 
-.container {
-   display: grid;
-   grid-gap: 1em; 
-}
+
 
 header {
    background: url(../images/consumer-electronics-3.jpg)
@@ -20,69 +17,116 @@ header {
    
 }
 
-img {
-   width: 70%;
-   height: 35%;
-   align-content: center;
-}
-
-
  h1 {
+   padding: 1.5em;
    font-family: 'Lato', sans-serif;
-   font-size: 80px;
+   font-size: 5em;
    text-align: center;
    color: whitesmoke;
    align-content: center;
+   
+   }
+
+   .container {
+      display: grid;
+      grid-gap: 1em; 
    }
   
-   h2 {
+   /* h2 {
  
    }
 
    p {
 
-   }
+   } */
+
+ 
 
    .row_1 {
-      display: flex;
-      grid-gap: 1em; 
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: stretch; 
    border: 1pt solid blue
+
    }
 
    .row_2 {
-      display: flex;
-      grid-gap: 1em;
-   border: 1pt solid salmon  
+      display:flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-around;
+      align-content: center;
+      align-items: stretch; 
+     border: 1pt solid blue 
       }
 
       .row_3 {
-         display: flex;
-         grid-gap: 1em; 
-         border: 1pt solid orange
+         display:flex;
+         flex-direction: row;
+         flex-wrap: nowrap;
+         justify-content: space-around;
+         align-content: center;
+         align-items: stretch; 
+        border: 1pt solid blue
          }
 
+         .col {
+            display:flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-items: center;
+            /* align-content: stretch; */
+            align-items: center;
+            width: 30%;
+            background-color: lightgrey;
+         }
+
+         img {
+            width: 80%;
+            height: 35%;
+            align-content: center;
+            justify-items: auto;
+         }
 
 .modal {
-   background-color: rgba(0, 0, 0, 0.4);
+   text-align: center;
+   font-size: 18px;
+   font-weight: 500px;
+   color: white;
+   background-color: rgba(0, 0, 0, 0.6);
 	position: fixed;
 	top: 0;
 	left: 0;
 	height: 100%;
 	width: 100%;
 	z-index: 1;
-	/*This puts our modal in front of the body (which has a default z-index setting of `0`*/
    overflow: auto;
    display: none;
    margin: 0 auto;
+   padding-top: 150px;
 }
 
 .modalTextBox {
    background-color: white;
+   margin: 15% auto;
 	height: 350px;
 	width: 550px;
-	border-radius: 2px;
+   border-radius: 2px;
+
 }
 
 .modal.open {
    display: block;
+}
+
+.title {
+   text-align: center;
+   font-size: 1em;
+}
+
+.author {
+   margin-bottom: 50px;
 }

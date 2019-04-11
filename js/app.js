@@ -47,7 +47,7 @@ const getNews = () => {
 
     const i = getNews;
     for (let i=0; i<=8; i++) {
-      const $blurb = $('<div>')
+      const $blurb = $('<div>').addClass('col')
 
       // START OF ROW_1
       if (i>=0 && i<=2){
@@ -56,7 +56,7 @@ const getNews = () => {
         $($blurb).append($h2);
 
         const $p = $('<p>').attr('class','description')
-        .text(newsData.articles[i].description)
+        // .text(newsData.articles[i].description)
         $($blurb).append($p);
 
         const $h5 = $('<h5>').attr('class','author')
@@ -65,16 +65,23 @@ const getNews = () => {
 
 // Copy starting from here
 
-
-
 // READ MORE CONTENT BUTTON FUNCTION
+
+// const $modalContent = $('<modalContent')
+//        $blurb.append($modalContent)
 
 const $button = $('<button>').attr('class', 'button')
 .text('Read More').on('click', function (){
   $(newsData.articles[i].url.length)
   $('.modal').show()
-  .text(newsData.articles[i].description)
+  .text(newsData.articles[i].title + ' ' + newsData.articles[i].description + newsData.articles[i].url)
+  
+  
 
+  $('.modal').on('click', function (){
+    $('.modal').hide()
+  })
+  
   let articlesstring = ""
   // console.log(newsData.articles[i].url.length);
     for (let j=0; j < newsData.articles[i].url.length; j++) {
@@ -85,11 +92,10 @@ const $button = $('<button>').attr('class', 'button')
         $($blurb).append($button);
 
         // Close modal/article
-        const $closeBtn = $('#close');
+const $closeBtn = $('#close');
 const closeModal = () => {
-  $modal.css('display', 'none');
+  $modal.css('display', 'none')
 }
-
 
 // CONTENT FUNCTION LOOP
 
@@ -116,7 +122,7 @@ const closeModal = () => {
         $($blurb).append($h2);
 
         const $p = $('<p>').attr('class','description')
-        .text(newsData.articles[i].description)
+        // .text(newsData.articles[i].description)
         $($blurb).append($p);
 
         const $h5 = $('<h5>').attr('class','author')
@@ -157,7 +163,7 @@ const $button = $('<button>').attr('class', 'button')
         $($blurb).append($h2);
 
         const $p = $('<p>').attr('class','description')
-        .text(newsData.articles[i].description)
+        // .text(newsData.articles[i].description)
         $($blurb).append($p);
 
         const $h5 = $('<h5>').attr('class','author')
@@ -191,9 +197,8 @@ const $button = $('<button>').attr('class', 'button')
         $('.row_3').append($blurb)
       } // END OF ROW_3
 
-
-   
-       
+      //  const MC = [newsData.articles[i].title, newsData.articles[i].description, newsData.articles[i].url]
+      //   $blurb.append(MC)
 
   
       } // End of For Loop line 49                    
