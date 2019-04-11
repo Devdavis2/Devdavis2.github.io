@@ -49,7 +49,55 @@ const getNews = () => {
     for (let i=0; i<=8; i++) {
       const $blurb = $('<div>')
 
+      // START OF ROW_1
       if (i>=0 && i<=2){
+        const $h2 = $('<h2>').attr('class','title')
+        .text(newsData.articles[i].title)
+        $($blurb).append($h2);
+
+        const $p = $('<p>').attr('class','description')
+        .text(newsData.articles[i].description)
+        $($blurb).append($p);
+
+        const $h5 = $('<h5>').attr('class','author')
+        .text(newsData.articles[i].author)
+        $($blurb).append($h5);
+
+// READ MORE CONTENT BUTTON FUNCTION
+
+const $button = $('<button>').attr('class', 'button')
+.text('Read More').on('click', function (){
+  $(newsData.articles[i].url.length)
+  let articlesstring = ""
+  // console.log(newsData.articles[i].url.length);
+
+    for (let j=0; j < newsData.articles[i].url.length; j++) {
+      articlesstring += newsData.articles[i].url[j]
+    }
+    console.log(articlesstring);    
+        })
+        $($blurb).append($button);
+
+
+// CONTENT FUNCTION LOOP
+
+        const $contentURL = $('<content>').attr('class', 'content')
+        // .text(newsData.articles[i].content)
+        $($blurb).append($contentURL);
+        
+
+  // CONTENT IMAGES
+        const $img = $('<img>').attr('class','img')
+        $img.attr('src', newsData.articles[i].urlToImage)
+        $($blurb).append($img)
+        $('.row_1').append($blurb)
+
+      }
+      // END OF ROW_1
+
+      // START OF ROW_2
+
+      if (i>=3 && i<=5){
         const $h2 = $('<h2>').attr('class','title')
         .text(newsData.articles[i].title)
         $($blurb).append($h2);
@@ -65,15 +113,31 @@ const getNews = () => {
         const $img = $('<img>').attr('class','img')
         $img.attr('src', newsData.articles[i].urlToImage)
         $($blurb).append($img)
-        $('.row_1').append($blurb)
+        $('.row_2').append($blurb)
       }
-      if (i>=3 && i<=5){
+      // END OF ROW_2
 
-      }
+      // START OF ROW_3
+
       if (i>=6 && i<=8){
-        
-      }
+        const $h2 = $('<h2>').attr('class','title')
+        .text(newsData.articles[i].title)
+        $($blurb).append($h2);
 
+        const $p = $('<p>').attr('class','description')
+        .text(newsData.articles[i].description)
+        $($blurb).append($p);
+
+        const $h5 = $('<h5>').attr('class','author')
+        .text(newsData.articles[i].author)
+        $($blurb).append($h5);
+
+        const $img = $('<img>').attr('class','img')
+        $img.attr('src', newsData.articles[i].urlToImage)
+        $($blurb).append($img)
+        $('.row_3').append($blurb)
+      }
+      // END OF ROW_2
         // const $h2 = $('<h2>').attr('class','title')
         // .text(newsData.articles[i].title)
         // $('blurb').append($h2);
@@ -98,14 +162,6 @@ const getNews = () => {
 }
 getNews()
 
-
-
-// if (i>=0 && i<=2){
-// }
-// if (i>=3 && i<=5){
-// }
-// if (i>=6 && i<=8){
-// }
 
 
 

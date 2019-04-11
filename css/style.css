@@ -1,47 +1,63 @@
-@import url('https://fonts.googleapis.com/css?family=Marck+Script|Open+Sans'); */
+@import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans');
 
-header {
-   background: url(https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjVsZO1n8bhAhWQmOAKHcThBnEQjRx6BAgBEAU&url=http%3A%2F%2Fwww.digitalsujay.com%2Fchoice-of-consumer-electronic-products%2F&psig=AOvVaw2mSyblV4kxGEP21jDTd4TC&ust=1555008957955768)
-   repeat;
-   margin: 0 auto;
-}
+
 
 body {
    background: whitesmoke;
    font-family: 'Open Sans', sans-serif;
 }
 
-img {
-   width: 50%
+.container {
+   display: grid;
+   grid-gap: 1em; 
 }
 
-#map {
-   height: 100%;
-   width: 35%;
-   display: flex;
+header {
+   background: url(/Users/DLC/Desktop/dev-port/sei/project1/images/consumer-electronics-3.jpg)
+   no-repeat center center;
+   background-size: cover;
+   height: 400px;
+   
+}
+
+img {
+   width: 70%;
+   height: 35%;
    align-content: center;
 }
 
- html, body {
-   height: 100%;
-   margin: 0;
-   padding: 0;
- }
 
  h1 {
-   font-family: 'Marck Script', cursive;
+   font-family: 'Lato', sans-serif;
    font-size: 80px;
-   padding: -1px auto;
+   text-align: center;
+   color: whitesmoke;
+   align-content: center;
+   }
+  
+   h2 {
+ 
    }
 
-   li {
-       list-style-type: none;
-   }
+   p {
 
-   .container {
-/* display: flex; */
    }
 
    .row_1 {
-   display: flex; 
+      display: flex;
+      grid-gap: 1em; 
+   border: 1pt solid blue
    }
+
+   .row_2 {
+      display: flex;
+      grid-gap: 1em;
+   border: 1pt solid salmon  
+      }
+
+      .row_3 {
+         display: flex;
+         grid-gap: 1em; 
+         border: 1pt solid orange
+         }
+
