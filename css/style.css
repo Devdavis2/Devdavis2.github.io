@@ -61,3 +61,28 @@ img {
          border: 1pt solid orange
          }
 
+
+.modal {
+   background-color: rgba(0, 0, 0, 0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	/*This puts our modal in front of the body (which has a default z-index setting of `0`*/
+   overflow: auto;
+   display: none;
+   margin: 0 auto;
+}
+
+.modalTextBox {
+   background-color: white;
+	height: 350px;
+	width: 550px;
+	border-radius: 2px;
+}
+
+.modal.open {
+   display: block;
+}

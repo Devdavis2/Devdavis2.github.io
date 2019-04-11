@@ -1,5 +1,5 @@
 
-console.log('hello');
+// console.log('hello');
 
 // const queryType = `t=`
 // let titleQuery = 'Cashierless Amazon Go stores are planning to accept cash'
@@ -63,14 +63,20 @@ const getNews = () => {
         .text(newsData.articles[i].author)
         $($blurb).append($h5);
 
+// Copy starting from here
+
+
+
 // READ MORE CONTENT BUTTON FUNCTION
 
 const $button = $('<button>').attr('class', 'button')
 .text('Read More').on('click', function (){
   $(newsData.articles[i].url.length)
+  $('.modal').show()
+  .text(newsData.articles[i].description)
+
   let articlesstring = ""
   // console.log(newsData.articles[i].url.length);
-
     for (let j=0; j < newsData.articles[i].url.length; j++) {
       articlesstring += newsData.articles[i].url[j]
     }
@@ -78,13 +84,20 @@ const $button = $('<button>').attr('class', 'button')
         })
         $($blurb).append($button);
 
+        // Close modal/article
+        const $closeBtn = $('#close');
+const closeModal = () => {
+  $modal.css('display', 'none');
+}
+
 
 // CONTENT FUNCTION LOOP
 
         const $contentURL = $('<content>').attr('class', 'content')
         // .text(newsData.articles[i].content)
         $($blurb).append($contentURL);
-        
+
+ 
 
   // CONTENT IMAGES
         const $img = $('<img>').attr('class','img')
@@ -110,6 +123,25 @@ const $button = $('<button>').attr('class', 'button')
         .text(newsData.articles[i].author)
         $($blurb).append($h5);
 
+// READ MORE CONTENT BUTTON FUNCTION
+
+const $button = $('<button>').attr('class', 'button')
+.text('Read More').on('click', function (){
+  $(newsData.articles[i].url.length)
+  let articlesstring = ""
+  // console.log(newsData.articles[i].url.length);
+    for (let j=0; j < newsData.articles[i].url.length; j++) {
+      articlesstring += newsData.articles[i].url[j]
+    }
+    console.log(articlesstring);    
+        })
+        $($blurb).append($button);
+
+// CONTENT FUNCTION LOOP
+
+        const $contentURL = $('<content>').attr('class', 'content')
+        // .text(newsData.articles[i].content)
+        $($blurb).append($contentURL);
         const $img = $('<img>').attr('class','img')
         $img.attr('src', newsData.articles[i].urlToImage)
         $($blurb).append($img)
@@ -132,12 +164,88 @@ const $button = $('<button>').attr('class', 'button')
         .text(newsData.articles[i].author)
         $($blurb).append($h5);
 
+
+// READ MORE CONTENT BUTTON FUNCTION
+
+const $button = $('<button>').attr('class', 'button')
+.text('Read More').on('click', function (){
+  $(newsData.articles[i].url.length)
+  let articlesstring = ""
+  // console.log(newsData.articles[i].url.length);
+    for (let j=0; j < newsData.articles[i].url.length; j++) {
+      articlesstring += newsData.articles[i].url[j]
+    }
+    console.log(articlesstring);    
+        })
+        $($blurb).append($button);
+
+// CONTENT FUNCTION LOOP
+
+        const $contentURL = $('<content>').attr('class', 'content')
+        // .text(newsData.articles[i].content)
+        $($blurb).append($contentURL);
+
         const $img = $('<img>').attr('class','img')
         $img.attr('src', newsData.articles[i].urlToImage)
         $($blurb).append($img)
         $('.row_3').append($blurb)
-      }
-      // END OF ROW_2
+      } // END OF ROW_3
+
+
+   
+       
+
+  
+      } // End of For Loop line 49                    
+ 
+  }, (error) => {
+    console.error(error)
+  })
+
+}
+getNews()
+
+
+
+
+ // START OF THE MODAL BUTTONS 
+  // MODAL BUTTON FUNCTIONALITY
+
+         
+  // const $close = $('<div>').attr('class','close')
+  // const $openReadMore = $('$openReadMore');               
+  const $closeBtn = $('#closeBtn');
+  
+  // APPEND MODEL FUNTIONALITY
+  // $($blurb).append($modalTextBox); // Grab the Read More  
+  // $($blurb).append($modal); // $('.modal');
+  // $($blurb).append($openReadMore);
+  // $($blurb).append($close); // Grabbing close button
+  // $($blurb).append($closeBtn);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         // const $h2 = $('<h2>').attr('class','title')
         // .text(newsData.articles[i].title)
         // $('blurb').append($h2);
@@ -153,112 +261,3 @@ const $button = $('<button>').attr('class', 'button')
         // const $img = $('<img>').attr('class','img')
         // $img.attr('src', newsData.articles[i].urlToImage)
         // $('blurb').append($img)
-  
-      }
- 
-  }, (error) => {
-    console.error(error)
-  })
-}
-getNews()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const getMovie = () => {
-//     $.ajax({
-//         url: queryURL + titleQuery
-//     }).then((movieData) => {
-//         // console.log(movieData)
-//         $('.container').html(`
-//     <h2>${movieData.Title}<h2>
-//     <h3>${movieData.Year}</h3>
-//     <h4>${movieData.Rated}</h4>
-//     <h5>${movieData.Genre}</h5>
-//     <p>${movieData.Plot}</p>
-//     `)
-//         $('<img>')
-//         .attr('src', movieData.Poster)
-//         .attr('alt', movieData.Title)
-//         .appendTo($('.container'))
-// }, (error) => {
-//     console.error(error)
-// }) 
-// }
-// // console.log(movieData.responseJSON);
-// $(() => { // document on reay
-
-//         // input value search for movies. 
-//     $('form').on('submit', (event) =>{
-//         event.preventDefault()
-//         titleQuery = $('input[type="text"]').val()
-//         getFood()
-//     })
-// });
-
-
-
-//     const defaultBounds = new google.maps.LatLngBounds(
-//         new google.maps.LatLng(41.0398,  -73.5425),
-//         new google.maps.LatLng(41.1106, -73.5455));
-
-//         const boundsOptions = {
-//         bounds: defaultBounds
-//         }
-
-//         const input = document.getElementById('searchTextField');
-//         var options = {
-//         bounds: defaultBounds,
-//         types: ['establishment', '(stamford)']
-//         };
-
-//         autocomplete = new google.maps.places.autocomplete(input, options);
-
-//         // Bias the autocomplete object to the user's geographical location,
-// // as supplied by the browser's 'navigator.geolocation' object.
-
-// function geolocate() {
-// if (navigator.geolocation) {
-// navigator.geolocation.getCurrentPosition(function(position) {
-//   var geolocation = {
-//     lat: position.coords.latitude,
-//     lng: position.coords.longitude
-//   };
-//   var circle = new google.maps.Circle(
-//       {center: geolocation, radius: position.coords.accuracy});
-//   autocomplete.setBounds(circle.getBounds());
-// });
-// }
-// }
-
-// autocomplete.bindTo('bounds', map);
-
-// });
