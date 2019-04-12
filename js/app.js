@@ -51,6 +51,14 @@ const getNews = () => {
 
       // START OF ROW_1
       if (i>=0 && i<=2){
+        
+        // Start of content
+
+        const $img = $('<img>').attr('class','img')
+        $img.attr('src', newsData.articles[i].urlToImage)
+        $($blurb).append($img)
+        $('.row_1').append($blurb)
+
         const $h2 = $('<h2>').attr('class','title')
         .text(newsData.articles[i].title)
         $($blurb).append($h2);
@@ -63,21 +71,15 @@ const getNews = () => {
         .text(newsData.articles[i].author)
         $($blurb).append($h5);
 
-// Copy starting from here
-
-// READ MORE CONTENT BUTTON FUNCTION
-
-// const $modalContent = $('<modalContent')
-//        $blurb.append($modalContent)
+// READ MORE  BUTTON CONTENT FUNCTION
 
 const $button = $('<button>').attr('class', 'button')
 .text('Read More').on('click', function (){
   $(newsData.articles[i].url.length)
   $('.modal').show()
-  .text(newsData.articles[i].title + ' ' + newsData.articles[i].description + newsData.articles[i].url)
+  .text(newsData.articles[i].description + newsData.articles[i].url)
   
-  
-
+// MODAL CLOSE FUNCTION
   $('.modal').on('click', function (){
     $('.modal').hide()
   })
@@ -91,25 +93,11 @@ const $button = $('<button>').attr('class', 'button')
         })
         $($blurb).append($button);
 
-        // Close modal/article
-const $closeBtn = $('#close');
-const closeModal = () => {
-  $modal.css('display', 'none')
-}
-
-// CONTENT FUNCTION LOOP
+// START OF CONTENT FUNCTION LOOP
 
         const $contentURL = $('<content>').attr('class', 'content')
         // .text(newsData.articles[i].content)
         $($blurb).append($contentURL);
-
- 
-
-  // CONTENT IMAGES
-        const $img = $('<img>').attr('class','img')
-        $img.attr('src', newsData.articles[i].urlToImage)
-        $($blurb).append($img)
-        $('.row_1').append($blurb)
 
       }
       // END OF ROW_1
@@ -117,6 +105,12 @@ const closeModal = () => {
       // START OF ROW_2
 
       if (i>=3 && i<=5){
+        
+        const $img = $('<img>').attr('class','img')
+        $img.attr('src', newsData.articles[i].urlToImage)
+        $($blurb).append($img)
+        $('.row_2').append($blurb)
+        
         const $h2 = $('<h2>').attr('class','title')
         .text(newsData.articles[i].title)
         $($blurb).append($h2);
@@ -129,35 +123,46 @@ const closeModal = () => {
         .text(newsData.articles[i].author)
         $($blurb).append($h5);
 
-// READ MORE CONTENT BUTTON FUNCTION
+        // READ MORE  BUTTON CONTENT FUNCTION
 
-const $button = $('<button>').attr('class', 'button')
-.text('Read More').on('click', function (){
-  $(newsData.articles[i].url.length)
-  let articlesstring = ""
-  // console.log(newsData.articles[i].url.length);
-    for (let j=0; j < newsData.articles[i].url.length; j++) {
-      articlesstring += newsData.articles[i].url[j]
-    }
-    console.log(articlesstring);    
-        })
-        $($blurb).append($button);
+        const $button = $('<button>').attr('class', 'button')
+        .text('Read More').on('click', function (){
+          $(newsData.articles[i].url.length)
+          $('.modal').show()
+          .text(newsData.articles[i].description + newsData.articles[i].url)
+          
+        // MODAL CLOSE FUNCTION
+          $('.modal').on('click', function (){
+            $('.modal').hide()
+          })
+          
+          let articlesstring = ""
+          // console.log(newsData.articles[i].url.length);
+            for (let j=0; j < newsData.articles[i].url.length; j++) {
+              articlesstring += newsData.articles[i].url[j]
+            }
+            console.log(articlesstring);    
+                })
+                $($blurb).append($button);
 
 // CONTENT FUNCTION LOOP
 
         const $contentURL = $('<content>').attr('class', 'content')
         // .text(newsData.articles[i].content)
         $($blurb).append($contentURL);
-        const $img = $('<img>').attr('class','img')
-        $img.attr('src', newsData.articles[i].urlToImage)
-        $($blurb).append($img)
-        $('.row_2').append($blurb)
+
       }
       // END OF ROW_2
 
       // START OF ROW_3
 
       if (i>=6 && i<=8){
+
+        const $img = $('<img>').attr('class','img')
+        $img.attr('src', newsData.articles[i].urlToImage)
+        $($blurb).append($img)
+        $('.row_3').append($blurb)
+
         const $h2 = $('<h2>').attr('class','title')
         .text(newsData.articles[i].title)
         $($blurb).append($h2);
@@ -171,11 +176,19 @@ const $button = $('<button>').attr('class', 'button')
         $($blurb).append($h5);
 
 
-// READ MORE CONTENT BUTTON FUNCTION
+// READ MORE  BUTTON CONTENT FUNCTION
 
 const $button = $('<button>').attr('class', 'button')
 .text('Read More').on('click', function (){
   $(newsData.articles[i].url.length)
+  $('.modal').show()
+  .text(newsData.articles[i].description + newsData.articles[i].url)
+  
+// MODAL CLOSE FUNCTION
+  $('.modal').on('click', function (){
+    $('.modal').hide()
+  })
+  
   let articlesstring = ""
   // console.log(newsData.articles[i].url.length);
     for (let j=0; j < newsData.articles[i].url.length; j++) {
@@ -184,17 +197,14 @@ const $button = $('<button>').attr('class', 'button')
     console.log(articlesstring);    
         })
         $($blurb).append($button);
-
+        
 // CONTENT FUNCTION LOOP
 
         const $contentURL = $('<content>').attr('class', 'content')
         // .text(newsData.articles[i].content)
         $($blurb).append($contentURL);
 
-        const $img = $('<img>').attr('class','img')
-        $img.attr('src', newsData.articles[i].urlToImage)
-        $($blurb).append($img)
-        $('.row_3').append($blurb)
+
       } // END OF ROW_3
 
       //  const MC = [newsData.articles[i].title, newsData.articles[i].description, newsData.articles[i].url]
@@ -208,10 +218,10 @@ const $button = $('<button>').attr('class', 'button')
   })
 
 }
-getNews()
+getNews() // END OF JS CODE
 
 
-
+// CODE THAT DIDNT WORK
 
  // START OF THE MODAL BUTTONS 
   // MODAL BUTTON FUNCTIONALITY
@@ -219,7 +229,7 @@ getNews()
          
   // const $close = $('<div>').attr('class','close')
   // const $openReadMore = $('$openReadMore');               
-  const $closeBtn = $('#closeBtn');
+  // const $closeBtn = $('#closeBtn');
   
   // APPEND MODEL FUNTIONALITY
   // $($blurb).append($modalTextBox); // Grab the Read More  
@@ -231,7 +241,11 @@ getNews()
 
 
 
-
+//         // Close modal/article
+// const $closeBtn = $('#close');
+// const closeModal = () => {
+//   $modal.css('display', 'none')
+// }
 
 
 

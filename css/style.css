@@ -14,33 +14,49 @@ header {
    no-repeat center center;
    background-size: cover;
    height: 400px;
-   
+   /* border-radius: 3%; */
+   justify-content: space-around;
 }
 
  h1 {
-   padding: 1.5em;
+   padding: 1.25em;
    font-family: 'Lato', sans-serif;
-   font-size: 5em;
+   font-size: 6em;
    text-align: center;
-   color: whitesmoke;
+   color: white;
    align-content: center;
-   
+   margin: -5%;
+   }
+
+   h2 {
+      margin-top: 5%; 
+   }
+
+   h3 {
+      text-align: center;
+      margin: -8% auto;
+      color: limegreen;
+      font-weight: 1em;
+      font-size: 1.5em;
+   }
+
+   h5 {
+      font-size: 1em;
+      margin-bottom: 10%;
+      align-content: center;
+    align-items: stretch;
+    justify-content: flex-start;
+    
    }
 
    .container {
       display: grid;
       grid-gap: 1em; 
    }
-  
-   /* h2 {
- 
-   }
 
    p {
 
-   } */
-
- 
+   } 
 
    .row_1 {
     display:flex;
@@ -48,9 +64,8 @@ header {
     flex-wrap: nowrap;
     justify-content: space-around;
     align-content: center;
-    align-items: stretch; 
-   border: 1pt solid blue
-
+    align-items: stretch;
+    margin-top: 1%;
    }
 
    .row_2 {
@@ -59,8 +74,7 @@ header {
       flex-wrap: nowrap;
       justify-content: space-around;
       align-content: center;
-      align-items: stretch; 
-     border: 1pt solid blue 
+      align-items: stretch;
       }
 
       .row_3 {
@@ -70,7 +84,7 @@ header {
          justify-content: space-around;
          align-content: center;
          align-items: stretch; 
-        border: 1pt solid blue
+         margin-bottom: 1.5%;
          }
 
          .col {
@@ -82,13 +96,17 @@ header {
             align-items: center;
             width: 30%;
             background-color: lightgrey;
+            border-radius: 3%;
+            margin-top: .75%;
          }
 
          img {
-            width: 80%;
+            width: 65%;
             height: 35%;
             align-content: center;
             justify-items: auto;
+            border-radius: 3%;
+            margin-top: 10%;
          }
 
 .modal {
@@ -105,8 +123,8 @@ header {
 	z-index: 1;
    overflow: auto;
    display: none;
-   margin: 0 auto;
-   padding-top: 150px;
+   margin: 0% auto;
+   padding-top: 10%;
 }
 
 .modalTextBox {
@@ -124,9 +142,16 @@ header {
 
 .title {
    text-align: center;
-   font-size: 1em;
+   font-size: 1.5em;
 }
 
 .author {
    margin-bottom: 50px;
+}
+
+.button {
+   background: whitesmoke;
+   font-size: 13px;
+   font-family: 'Open Sans', sans-serif;
+   margin-bottom: 75px;
 }
